@@ -1,0 +1,43 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = '''
+$username$directory$git_branch$git_status
+$character
+'''
+
+# Inserts a blank line between shell prompts
+add_newline = true
+
+[username]
+style_user = 'blue'
+style_root = 'red'
+show_always = true
+
+
+# https://starship.rs/config/#package-version
+[package]
+disabled = true
+
+# https://starship.rs/config/#git-branch
+# [git_branch]
+# format = "| [$symbol$branch]($style) "
+
+[git_status]
+ahead = '⇡${count}'
+behind = '⇣${count}'
+
+# https://starship.rs/config/#python
+[python]
+format = "| [$virtualenv]($style)"
+
+# https://starship.rs/config/#character
+[character]
+success_symbol = '[\$](bold green)'
+error_symbol = '[\$](bold red)'
+
+# https://starship.rs/config/#directory
+[directory]
+style = 'blue bold'
+truncate_to_repo = false
+truncation_length = 0
